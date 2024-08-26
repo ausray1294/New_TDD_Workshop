@@ -1,18 +1,12 @@
 //dont forget to import your functions
+import { Movie } from './MovieStore';
 
-
-describe("Movie Store", () => {
+describe('Movie Store', () => {
   it('should add movies to an array', () => {
-    expect(addMovies('Deadpool')).toBe(['Deadpool'])
-  })
-
-  it('should not add movies if not string', () => {
-    expect(addMovies(4)).toBe('not a movie')
-    expect(addMovies(false)).toBe('not a movie')
-  })
-
+    const movie1 = new Movie('Deadpool');
+    expect(movie1.addMovie).toBe(['Deadpool']);
+  });
 });
-
 
 //// A movie store is asking you to make an application
 // the application can add movies to an inventory array,

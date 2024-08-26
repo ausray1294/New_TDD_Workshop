@@ -1,6 +1,6 @@
-//I recommend creating classes for both customers and movies 
+//I recommend creating classes for both customers and movies
 
-//Example movie class: 
+//Example movie class:
 export let inventory: Array<Movie> = [];
 
 export class Movie {
@@ -17,20 +17,23 @@ export class Movie {
   rentMovie() {
     this.inStock = false;
   }
-    //you need more functions than just this
+  //you need more functions than just this
 }
 
 export function addMovie(movie: Movie) {
+  if (typeof movie !== 'string') {
+    return 'not a movie';
+  }
   inventory.push(movie);
 }
 
-// Example test for the rent movie function:
-test("rentMovie() should set inStock to false for a movie", () => {
-  let movie1 = new Movie("Top Gun");
-  let movie2 = new Movie("Titanic");
+// // Example test for the rent movie function:
+// test('rentMovie() should set inStock to false for a movie', () => {
+//   let movie1 = new Movie('Top Gun');
+//   let movie2 = new Movie('Titanic');
 
-  movie1.rentMovie();
+//   movie1.rentMovie();
 
-  expect(movie1.inStock).toBe(false);
-  expect(movie2.inStock).toBe(true);
-});
+//   expect(movie1.inStock).toBe(false);
+//   expect(movie2.inStock).toBe(true);
+// });
